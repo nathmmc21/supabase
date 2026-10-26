@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Chat Online</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.95.0"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="chat">
+      <section id="loginScreen" class="auth-screen" aria-labelledby="login-title">
+        <header class="chat-header">
+          <div class="header-main">
+            <h1 id="login-title">Class Chat</h1>
+            <span class="message-count">Sign in</span>
+          </div>
+        </header>
+        <div class="auth-content">
+          <p class="auth-intro">Sign in to join your class conversation, or create an account.</p>
+          <form id="loginForm" class="auth-form">
+            <h2>Log in</h2>
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" autocomplete="email" required>
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" autocomplete="current-password" required>
+            <button type="submit">Log in</button>
+          </form>
+          <form id="signupForm" class="auth-form">
+            <h2>Create an account</h2>
+            <label for="displayName">Display name (2–24 characters)</label>
+            <input id="displayName" type="text" minlength="2" maxlength="24" autocomplete="nickname" required>
+            <label for="signupEmail">Email</label>
+            <input id="signupEmail" type="email" autocomplete="email" required>
+            <label for="signupPassword">Password (at least 8 characters)</label>
+            <input id="signupPassword" type="password" minlength="8" autocomplete="new-password" required>
+            <button type="submit">Sign up</button>
+          </form>
+          <p id="authMessage" class="status-message" role="status" aria-live="polite"></p>
+        </div>
+        <footer class="app-footer">KASIM, NATHANIEL — M39</footer>
+      </section>
+
+      <section id="chatScreen" class="chat-screen" aria-label="Class chat" hidden>
+        <header class="chat-header">
+          <div class="header-main">
+            <h1>Class Chat</h1>
+            <span id="message-count" class="message-count">0 messages</span>
+          </div>
+          <div class="controls">
+            <span id="welcomeText" class="welcome-text"></span>
+            <button id="logoutButton" type="button" class="ghost">Log out</button>
+          </div>
+        </header>
+        <ul id="messages" class="messages" aria-live="polite"></ul>
+        <p id="chatStatus" class="status-message" role="status" aria-live="polite"></p>
+        <form id="message-form" class="composer" autocomplete="off">
+          <label for="message-input" class="visually-hidden">Message</label>
+          <input id="message-input" type="text" placeholder="Type a message, /weather Manila, or /joke" maxlength="500" required>
+          <button type="submit">Send</button>
+        </form>
+        <footer class="app-footer">KASIM, NATHANIEL — M39</footer>
+      </section>
+    </main>
+  </body>
+</html>
